@@ -1,0 +1,198 @@
+@import "/template/login/index.wxss";
+
+page {
+  background-color: #f7f8fa;
+}
+
+.userinfo {
+  /* width: 704rpx; *//* height: 360rpx; */
+  width: 750rpx;
+  height: 404rpx;
+  position: relative;
+  /* margin: 22rpx 23rpx; */
+}
+
+.userinfo .bg {
+  width: 750rpx;
+  height: 404rpx;
+  display: block;
+}
+
+.userinfo .avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 750rpx;
+  top: 76rpx;
+}
+
+.userinfo .avatar .userinfo-avatar {
+  width: 184rpx;
+  height: 184rpx;
+  border-radius: 50%;
+}
+
+.userinfo .avatar .userinfo-nickname {
+  margin-top: 20rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333;
+  letter-spacing: 0;
+}
+
+.login-btn {
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+.asset {
+  width: 100vw;
+  height: 160rpx;
+  background-color: #fff;
+  display: flex;
+}
+
+.asset .line {
+  background: #e6e6e6;
+  width: 2rpx;
+  height: 112rpx;
+  margin-top: 24rpx;
+}
+
+.asset .item {
+  width: 374rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.asset .item .num {
+  font-family: PingFangSC-Medium;
+  font-size: 52rpx;
+  color: #feb21c;
+  letter-spacing: 0;
+  line-height: 52rpx;
+}
+
+.asset .item .unit {
+  margin-top: 12rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #666;
+  letter-spacing: 0;
+  line-height: 20rpx;
+}
+
+.menus {
+  width: 100vw;
+  margin-top: 24rpx;
+  background-color: #ffffff;
+}
+.menus .menu {
+  width: 100vw;
+  height: 98rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menus .menu .title {
+  display: flex;
+  align-items: center;
+  margin-left: 24rpx;
+}
+.menus .menu .title .icon1 {
+  width: 44rpx;
+  height: 44rpx;
+}
+.menus .menu .title .icon-tx {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 6rpx;
+  margin-right: 6rpx;
+}
+.menus .menu .title .name {
+  margin-left: 16rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 98rpx;
+}
+.menus .menu .icon2 {
+  margin-right: 38rpx;
+  width: 14rpx;
+  height: 24rpx;
+}
+
+.version {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 40rpx;
+}
+
+.my-item {
+  width: 100%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
+  background-size: 16rpx auto, 750rpx auto;
+  border-bottom: 1px solid #eee;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 100rpx;
+  font-size: 14px;
+}
+
+.about {
+  width: 100%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
+  background-size: 16rpx auto, 750rpx auto;
+  margin: 20rpx 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 100rpx;
+}
+
+.order-shortcut {
+  display: flex;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.order-shortcut .item {
+  display: flex;
+  flex-direction: column;
+  width: 150rpx;
+  text-align: center;
+}
+
+.order-shortcut .item .icon {
+  width: 67rpx;
+  height: 67rpx;
+  margin-left: 45rpx;
+}
+
+.order-shortcut .item .text {
+  font-size: 12px;
+}
+
+.to-authorize {
+  border: none;
+  padding: 0rpx;
+  margin: 0rpx;
+  background: none;
+  border: none;
+  height: auto;
+  line-height: auto;
+}
+
+/* 绑定手机号 */
+
+.bind-phone-number {
+  margin: 20rpx;
+  width: 100%;
+}

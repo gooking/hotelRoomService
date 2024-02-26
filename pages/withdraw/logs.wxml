@@ -1,0 +1,27 @@
+<view class="asset">
+  <view class="t">
+    <image class="icon" src="/images/icon/balance.svg"></image>
+    <view class="name">当前余额</view>
+  </view>
+  <view class="m">￥{{balance}}</view>
+</view>
+<view class="title">
+  <image class="icon" src="/images/icon/time.svg"></image>
+  <view class="name">提现记录</view>
+</view>
+<view class="no-order" wx:if="{{!cashlogs || cashlogs.length == 0}}">
+  <image src="/images/icon/cashlogs-empty.svg"></image>
+  <view>暂无提现记录</view>
+</view>
+<view class='cashlogs' wx:for-items="{{cashlogs}}" wx:key="id">
+  <view class='profile'>
+    <view class='typeStr'>{{ item.statusStr }}</view>
+    <view class='dateAdd'>{{ item.dateAdd }}</view>
+  </view>
+  <view class='amount'> ￥ {{ item.money }} </view>
+</view>
+<view class="bottom"></view>
+
+
+<import src="/template/login/index.wxml" />
+<template is="apifmLogin" data="{{wxlogin: wxlogin}}" />

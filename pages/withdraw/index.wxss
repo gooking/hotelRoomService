@@ -1,0 +1,121 @@
+page {
+  background-color: #fff;
+}
+
+.asset {
+  width: 100vw;
+  height: 160rpx;
+  background: #4b4b4b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.asset .t {
+  display: flex;
+  align-items: center;  
+}
+
+.asset .t .icon {
+  margin-left: 24rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.asset .t .name {
+  margin-left: 16rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #feb21c;
+  letter-spacing: 0;
+  line-height: 160rpx;
+}
+.asset .m {
+  font-family: PingFangSC-Regular;
+  font-size: 56rpx;
+  color: #FEB21C;
+  letter-spacing: 0;
+  text-align: right;
+  line-height: 160rpx;
+}
+.asset .btn {
+  margin-right: 20rpx;
+  width: 160rpx;
+  height: 54rpx;
+  background: #FEB21C;
+  border-radius: 27rpx;
+
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 54rpx;
+}
+.space {
+  width: 100vw;
+  height: 12rpx;
+  background: #E6E6E6;
+}
+.title {
+  display: flex;
+  align-items: center;  
+  width: 100vw;
+  margin-top: 32rpx;
+}
+
+.title .icon {
+  margin-left: 24rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.title .name {
+  margin-left: 16rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #feb21c;
+  letter-spacing: 0;
+  line-height: 28rpx;
+}
+.amount {
+  margin-top: 24rpx;
+  width: 100vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 24rpx;
+  border-bottom: 1rpx solid #E6E6E6;
+}
+.profile {
+  display: flex;
+  padding-left: 24rpx;
+  margin-top: 30rpx;
+}
+.profile .l {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #999999;
+  letter-spacing: 0;
+}
+.profile .r {
+  margin-left: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #FEB21C;
+  letter-spacing: 0;
+}
+.withdraw-btn {
+  width: 702rpx;
+  height: 98rpx;
+  text-align: center;
+  background: #FEB21C;
+  border-radius: 49rpx;
+  margin-top: 44rpx;
+  margin-left: 24rpx;
+
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 98rpx;
+}

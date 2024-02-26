@@ -1,0 +1,49 @@
+<view class="hheader">
+  <view class="ttabs">
+    <view class="ttab {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="index" data-index="{{index}}" bindtap="statusTap">{{item}}</view>
+  </view>
+  <navigator url="/pages/invoice/apply">
+    <view class="invoice">
+      <image class="icon" src="/images/icon/fp.svg"></image>
+      <view>开发票</view>
+    </view>
+  </navigator>
+</view>
+<view class="no-order" wx:if="{{!orderList || orderList.length == 0}}">
+  <image src="/images/icon/orders-empty.svg"></image>
+  <view>暂无订单记录</view>
+</view>
+<view class="orders" wx:for-items="{{orderList}}" wx:key="id">
+  <view class="title">
+    <view class="shop">{{item.shopName}}</view>
+    <view class="st">{{item.statusStr}}</view>
+  </view>
+  <view class="goods-list">
+    <view class="item" wx:for-items="{{goodsMap[item.id]}}" wx:key="index">
+      <image src="{{item.pic}}" class="img" />
+      <view class="profile">
+        <view class="name" bindtap="selGood" data-id="{{item.id}}">{{ item.goodsName }}</view>
+        <view class="price">
+          <view class="p">￥{{ item.amountSingle }}</view>
+          <view class="n">x {{ item.number }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tj">
+    <view class="a">共{{item.goodsNumber}}件商品   合计：</view>
+    <view class="b">￥{{item.amountReal}}</view>
+  </view>
+  <view wx:if="{{ item.status == 0 }}" class="btns">
+    <view class="close" bindtap="cancelOrderTap" data-id="{{item.id}}">取消订单</view>
+    <view class="pay" bindtap="toPayTap" data-id="{{item.id}}" data-money="{{item.amountReal}}" data-score="{{item.score}}">付款</view>
+  </view>
+  <view wx:if="{{ item.status == 1 }}" class="bottom"></view>
+  <view wx:if="{{ item.status == 2 }}" class="btns">
+    <view class="pay" bindtap="orderDelivery" data-id="{{item.id}}">确认收货</view>
+  </view>
+  <view wx:if="{{ item.status == 3 || item.status == 4 }}" class="btns">
+    <view class="close" style="margin-right:24rpx;" bindtap="orderDelete" data-id="{{item.id}}">删除订单</view>
+  </view>
+</view>
+<view class="bottom"></view>

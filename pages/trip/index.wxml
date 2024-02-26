@@ -1,0 +1,14 @@
+<map id="map" class="map" 
+  longitude="{{longitude}}" latitude="{{latitude}}" 
+  show-location="{{true}}" show-compass="{{true}}" 
+  show-scale="{{true}}" enable-traffic="{{true}}">
+</map>
+<view class="popup">
+  <view class="title">添加乘车人</view>
+  <input class="input" bindinput="changeName" type="text" placeholder="姓名" value="{{name}}" />
+  <input class="input" bindinput="changeMobile" maxlength="11" type="number" placeholder="请输入11位手机号码" value="{{mobile}}" />
+  <button class="save-btn" bindtap="save">提交用车</button>
+</view>
+
+<import src="/template/login/index.wxml" />
+<template is="apifmLogin" data="{{wxlogin: wxlogin}}" />

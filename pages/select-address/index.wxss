@@ -1,0 +1,104 @@
+page {
+  background-color: #f6f8fa;
+}
+.empty {
+  width: 750rpx;
+  margin-top: 98rpx;
+  text-align: center;
+}
+.empty image {
+  margin-left: 317rpx;
+  width: 116rpx;
+  height: 156rpx;
+  display: block;
+}
+.empty text {
+  margin-top: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #333333;
+  letter-spacing: 0;
+}
+.address-list{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20rpx;
+    padding-bottom: 100rpx;
+}
+.address-list .a-address{
+    width: 720rpx;
+    margin-left: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid #eee;
+}
+.a-address .left-text{
+    width: 610rpx;
+    box-sizing: border-box;
+    padding-left: 58rpx;
+}
+.a-address .left-text.active{
+    background: url(https://cdn.it120.cc/images/weappshop/addr-active.png) no-repeat left center;
+    background-size: 28rpx auto;
+}
+.a-address .left-text .name-tel{
+    margin-bottom: 20rpx;
+}
+.a-address .left-text .address-box{
+    font-size:24rpx;
+    color:#888888;
+    line-height:36rpx;
+}
+.a-address .right-edit{
+  width: 70rpx;
+  color: #FEB21C;
+  font-size: 28rpx;
+}
+.a-address .right-del{
+  width: 70rpx;
+  color: #e64340;
+  font-size: 28rpx;
+  margin: 0 24rpx;
+}
+.bottom-box{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size:28rpx;
+    color:#000000;
+    border-top: 1rpx solid #eee;
+    height:100rpx;
+    line-height: 100rpx;
+    background: #fff url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 705rpx center;
+    background-size: 15rpx auto;
+}
+.bottom-box .add-btn{
+    margin-left: 30rpx;
+    padding-left: 70rpx;
+    background: url(https://cdn.it120.cc/images/weappshop/add-addr.png) no-repeat left center;
+    background-size: 40rpx auto;
+}
+.address-add {
+  width: 702rpx;
+  height: 100rpx;
+  border: 2rpx solid #FEB21C;
+  border-radius: 8rpx;
+  line-height: 100rpx;
+  text-align: center;
+  position: fixed;
+  left: 24rpx;
+  bottom: 32rpx;
+}
+.address-add image {
+  width: 20rpx;
+  height: 20rpx;
+}
+.address-add text {
+  margin-left: 16rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #FEB21C;
+  letter-spacing: 0;
+}

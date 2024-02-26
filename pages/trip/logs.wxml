@@ -1,0 +1,13 @@
+<view class="no-order" wx:if="{{!logs || logs.length == 0}}">
+  <image src="/images/trip-empty.png"></image>
+  <view>暂无交易记录</view>
+</view>
+<view class='cashlogs' wx:for-items="{{logs}}" wx:key="id">
+  <view class='profile'>
+    <view class='typeStr'>出行用车</view>
+    <view class='dateAdd'>{{ item.dateAdd }}</view>
+    <view class='dateAdd'>{{ item.remark }}</view>
+  </view>
+  <view class='amount'> {{ item.statusStr }} </view>
+</view>
+<view class="bottom"></view>

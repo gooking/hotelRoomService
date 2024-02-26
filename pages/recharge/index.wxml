@@ -1,0 +1,18 @@
+<view class="asset">
+  <view class="t">
+    <image class="icon" src="/images/icon/balance.svg"></image>
+    <view class="name">当前余额</view>
+  </view>
+  <view class="m">￥{{balance}}</view>
+  <view class="btn" bindtap="goAmountLogs">余额明细</view>
+</view>
+<view class="title">
+  <image class="icon" src="/images/icon/balance.svg"></image>
+  <view class="name">余额充值</view>
+</view>
+<view class="rules">
+  <view class="rule {{index == activeIndex?'active': ''}}" wx:for='{{rechargeSendRules}}' wx:key="id" bindtap="rechargeAmount" data-index="{{index}}" data-confine="{{ item.confine }}">
+    <view class="confine">{{item.confine}}元</view>
+    <view class="send">到账：{{item.confine}}+{{item.send}}元</view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+function toFix2(value) {
+  return value.toFixed(2)
+}
+
+module.exports = {
+  toFix2: toFix2,
+}

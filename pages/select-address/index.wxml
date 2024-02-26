@@ -1,0 +1,24 @@
+<view class="container">
+  <view wx:if="{{ !addressList || addressList.length == 0 }}" class="empty">
+    <image src="/images/icon/address-empty.svg"></image>
+    <text>还未添加收货地址哦~</text>
+  </view>
+  <view wx:else class="address-list">
+    <view class="a-address" wx:for-items="{{addressList}}" wx:key="{{index}}">
+      <view class="left-text {{item.isDefault? 'active':''}}" bindtap="selectTap" data-id="{{item.id}}">
+        <view class="name-tel">
+          {{item.linkMan}} {{item.mobile}}
+        </view>
+        <view class="address-box">
+          {{item.address}}
+        </view>
+      </view>
+      <view class="right-edit" bindtap="editAddess" data-id="{{item.id}}">修改</view>
+      <view class="right-del" bindtap="deleteAddress" data-id="{{item.id}}">删除</view>
+    </view>
+  </view>  
+  <view class="address-add" bindtap="addAddess">
+    <image src="/images/icon/jia-on.svg"></image>
+    <text>收货地址</text>
+  </view>
+</view>

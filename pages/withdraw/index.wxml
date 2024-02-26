@@ -1,0 +1,19 @@
+<view class="asset">
+  <view class="t">
+    <image class="icon" src="/images/icon/balance.svg"></image>
+    <view class="name">当前余额</view>
+  </view>
+  <view class="m">￥{{balance}}</view>
+  <view class="btn"><navigator url="/pages/withdraw/logs">提现记录</navigator></view>
+</view>
+<!-- <view class="space"></view> -->
+<view class="title">
+  <image class="icon" src="/images/icon/balance.svg"></image>
+  <view class="name">提现金额:</view>
+</view>
+<input type="digit" value="{{amount}}" class="amount" bindinput="bindinput" placeholder="请输入提现金额"></input>
+<view class="profile">
+  <view class="l">可提现金额￥{{balance}}</view>
+  <view class="r" bindtap="doneAll">全部提现</view>
+</view>
+<view class="withdraw-btn" bindtap="bindSave">申请提现</view>

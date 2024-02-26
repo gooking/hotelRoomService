@@ -1,0 +1,92 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/start/loading",
+    "pages/trip/index",
+    "pages/trip/logs",
+    "pages/goods/shop",
+    "pages/coupons/index",
+    "pages/shop-cart/index",
+    "pages/to-pay-order/index",
+    "pages/select-address/index",
+    "pages/address-add/index",
+    "pages/my/index",
+    "pages/order-list/index",
+    "pages/invoice/apply",
+    "pages/order-details/index",
+    "pages/order/refundApply",
+    "pages/wuliu/index",
+    "pages/notice/show",
+    "pages/recharge/index",
+    "pages/withdraw/index",
+    "pages/withdraw/logs",
+    "pages/kanjia/index",
+    "pages/score-excharge/index",
+    "pages/asset/index",
+    "pages/score/index",
+    "pages/sign/index",
+    "pages/category/category",
+    "pages/maidan/index",
+    "pages/fx/apply",
+    "pages/fx/apply-status",
+    "pages/fx/members",
+    "pages/fx/commisionLog",
+    "pages/invoice/list",    
+    "pages/deposit/pay",
+    "pages/goods-details/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#333333",
+    "navigationBarTitleText": " ",
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 50
+  },
+  "permission": {
+    "scope.userFuzzyLocation": {
+      "desc": "帮你推荐离你最近的酒店"
+    }
+  },
+  "requiredPrivateInfos":[
+    "getFuzzyLocation"
+  ],
+  "tabBar": {
+    "color": "#8E8E93",
+    "selectedColor": "#FEB21C",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png",
+        "text": "迷你吧"
+      },
+      {
+        "pagePath": "pages/trip/index",
+        "iconPath": "images/nav/car-off.png",
+        "selectedIconPath": "images/nav/car-on.png",
+        "text": "预约租车"
+      },
+      {
+        "pagePath": "pages/coupons/index",
+        "iconPath": "images/nav/coupon-off.png",
+        "selectedIconPath": "images/nav/coupon-on.png",
+        "text": "优惠卷"
+      },
+      {
+        "pagePath": "pages/shop-cart/index",
+        "iconPath": "images/nav/cart-off.png",
+        "selectedIconPath": "images/nav/cart-on.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

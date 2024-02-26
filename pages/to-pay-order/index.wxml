@@ -1,0 +1,120 @@
+<import src="/template/login/index.wxml" />
+<wxs src="../../utils/filters.wxs" module="filters"></wxs>
+
+<view wx:if="{{express_open == 1}}" class="express-type">
+  <view class="row-label">配送到</view>
+  <radio-group bindchange="radioChange">
+    <label class="radio">
+      <radio value="zq" checked="{{peisongType == 'zq'}}" /> 客房
+    </label>
+    <label class="radio">
+      <radio value="kd" checked="{{peisongType == 'kd'}}" /> 快递
+    </label>
+  </radio-group>
+</view>
+
+<view wx:if="{{peisongType == 'zq'}}" class="input-group">
+  <view class="row-wrap">
+    <view class="label">酒店</view>
+    <view class="label-right">
+      {{shop.name}}
+    </view>
+  </view>
+  <view class="row-wrap">
+    <view class="label">房间号</view>
+    <view class="label-right">
+      <input name="fjh" class="input" type="text" placeholder="请输入房间号" bindinput="fjhChange" />
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{!curAddressData && peisongType == 'kd'}}" class="address" bindtap="addAddress">
+  <view class="add">
+    <image src="/images/icon/jia-on.svg"></image>
+    <text>收货地址</text>
+  </view>
+</view>
+<view wx:if="{{curAddressData && peisongType == 'kd'}}" class="address" bindtap="selectAddress">
+  <view class="info">
+    <view class="a">{{curAddressData.address}}</view>
+    <view class="b">{{curAddressData.linkMan}} {{curAddressData.mobile}}</view>
+  </view>
+  <view class="icon">＞</view>
+</view>
+
+<view class="goods-list">
+  <view class="item" wx:for-items="{{goods}}" wx:key="index">
+    <image src="{{item.pic}}" class="img" />
+    <view class="profile">
+      <view class="name" bindtap="selGood" data-id="{{item.id}}">{{ item.name }}</view>
+      <view class="guige">{{ item.characteristic }}</view>
+      <view class="price">
+        <view class="p">￥{{ item.minPrice }}</view>
+        <view class="n">x {{ item.number }}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="coupon-number">
+  <view class="t">优惠券</view>
+  <view class="p" bindtap="openCouponsPop">
+    <view class="text"><text>{{ couponsNumber }}</text> 张可用</view>
+    <view class="icon">＞</view>
+  </view>
+</view>
+
+<view class="goods-info">
+  <view class="item">
+    <view class="t">商品数量</view>
+    <view class="v">{{ totalNumber }}</view>
+  </view>
+  <view class="item">
+    <view class="t">总金额</view>
+    <view class="v">￥{{ allGoodsAndYunPrice }}</view>
+  </view>
+  <view class="item">
+    <view class="t">折扣</view>
+    <view class="v">￥{{ youhuijine }}</view>
+  </view>
+  <view class="item">
+    <view class="t sft">实付</view>
+    <view class="v sfv">￥{{ filters.toFix2(allGoodsAndYunPrice - youhuijine) }}</view>
+  </view>
+</view>
+
+<view class="jiesuan-box">
+  <view class="left-price">
+    <view class="label">总计</view>
+    <view class="price">¥{{ filters.toFix2(allGoodsAndYunPrice - youhuijine) }}</view>
+  </view>
+  <view class="to-pay-btn" bindtap="createOrder">去支付</view>
+</view>
+
+
+<!-- 弹出选择优惠券 -->
+<view wx:if="{{showCouponsPop}}" class="pop-bg"></view>
+<view wx:if="{{showCouponsPop}}" class="pop-coupons-header">
+  <view class="title">选择优惠券</view>
+  <image class="close" src="/images/popup-close.png" bindtap="closePop"></image>
+</view>
+<scroll-view wx:if="{{showCouponsPop}}" class="pop-coupons" scroll-y="true">  
+  <view class="coupons" wx:for="{{coupons}}" wx:key="id">
+    <image class="icon" src="/images/icon/coupons-active.svg"></image>
+    <view class="profile">
+      <view class="name">
+        <view class="t">代金券</view>
+        <view class="n">{{item.name}}</view>
+      </view>
+      <view class="price">
+        <view class="tj">满{{item.moneyHreshold}}</view>
+        <view class="amount"><text>￥</text>{{item.money}}</view>
+      </view>
+      <view class="btn" bindtap="bindChangeCoupon" data-id="{{item.id}}">选择使用</view>
+    </view>
+  </view>
+  <view class="bottom"></view>
+</scroll-view>
+
+
+<template is="apifmLogin" data="{{wxlogin: wxlogin}}" />

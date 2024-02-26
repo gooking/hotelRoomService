@@ -1,0 +1,118 @@
+@import "/template/login/index.wxss";
+
+.asset {
+  width: 100vw;
+  height: 160rpx;
+  background: #4b4b4b;
+  display: flex;
+  align-items: center;
+}
+
+.asset .t {
+  display: flex;
+  align-items: center;  
+}
+
+.asset .t .icon {
+  margin-left: 24rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.asset .t .name {
+  margin-left: 16rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #feb21c;
+  letter-spacing: 0;
+  line-height: 160rpx;
+}
+.asset .m {
+  font-family: PingFangSC-Regular;
+  font-size: 56rpx;
+  color: #FEB21C;
+  letter-spacing: 0;
+  text-align: right;
+  line-height: 160rpx;
+  margin-left: 140rpx;
+}
+
+.title {
+  display: flex;
+  align-items: center;  
+  width: 100vw;
+  margin-top: 32rpx;
+}
+
+.title .icon {
+  margin-left: 24rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.title .name {
+  margin-left: 16rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 28rpx;
+}
+
+.no-order {
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-order image {
+  width: 116rpx;
+  height: 140rpx;
+  margin-top: 100rpx;
+}
+
+.no-order view {
+  margin-top: 32rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #333;
+  letter-spacing: 0;
+}
+
+.cashlogs {
+  width: 702rpx;
+  margin-top: 24rpx;  
+  margin-left: 24rpx;  
+  height: 148rpx;
+  background: #FFFFFF;
+  box-shadow: 0 0 16rpx 0 rgba(36,44,69,0.20);
+  border-radius: 8rpx;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cashlogs .profile {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24rpx;
+}
+.cashlogs .amount {
+  font-size: 56rpx;
+  color: #FEB21C;
+  margin-right: 24rpx;
+}
+.cashlogs .profile .typeStr {
+  font-size: 30rpx;
+  color: #333333;
+}
+.cashlogs .profile .dateAdd {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 30rpx;
+}
+.bottom {
+  width: 100vw;
+  height: 24rpx;
+}

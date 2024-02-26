@@ -1,0 +1,80 @@
+<view class="userinfo">
+  <image class="bg" src="/images/NEWTOM.svg"></image>
+  <view wx:if="{{apiUserInfoMap}}" class="avatar">
+		<image class="userinfo-avatar" src="{{ apiUserInfoMap.base.avatarUrl || '/images/tx.jpg' }}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{ apiUserInfoMap.base.nick || ('用户' + apiUserInfoMap.base.id) }}</text>
+	</view>
+  <view wx:else class="avatar">
+		<button class="login-btn" style="margin-top:100rpx;" plain="true" size="mini" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点击登录账户</button>
+	</view>
+</view>
+<view wx:if="{{ rechargeOpen }}" class="asset">
+  <view class='item'>
+    <view class="num">{{balance}}</view>
+    <view class="unit">余额</view>
+  </view>
+  <view class="line"></view>
+  <view class='item'>
+    <view class="num">{{score}}</view>
+    <view class="unit">积分</view>
+  </view>
+</view>
+<!-- https://www.iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.de12df413&cid=15640 -->
+<view class="menus">
+  <navigator url="/pages/recharge/index">
+    <view class="menu">
+      <view class="title">
+        <image class="icon1" src="/images/icon/my/cz.svg"></image>
+        <view class="name">我要充值</view>
+      </view>
+      <image class="icon2" src="/images/icon/next.svg"></image>
+    </view>
+  </navigator>
+  <navigator url="/pages/withdraw/index">
+    <view class="menu">
+      <view class="title">
+        <image class="icon-tx" src="/images/icon/my/tx.svg"></image>
+        <view class="name">我要提现</view>
+      </view>
+      <image class="icon2" src="/images/icon/next.svg"></image>
+    </view>
+  </navigator>
+  <navigator url="/pages/select-address/index">
+    <view class="menu">
+      <view class="title">
+        <image class="icon1" src="/images/icon/my/address.svg"></image>
+        <view class="name">我的收货地址</view>
+      </view>
+      <image class="icon2" src="/images/icon/next.svg"></image>
+    </view>
+  </navigator>
+  <navigator url="/pages/order-list/index">
+    <view class="menu">
+      <view class="title">
+        <image class="icon1" src="/images/icon/my/order.svg"></image>
+        <view class="name">商城订单</view>
+      </view>
+      <image class="icon2" src="/images/icon/next.svg"></image>
+    </view>
+  </navigator>
+  <navigator url="/pages/trip/logs">
+    <view class="menu">
+      <view class="title">
+        <image class="icon1" src="/images/icon/my/cx.svg"></image>
+        <view class="name">出行订单</view>
+      </view>
+      <image class="icon2" src="/images/icon/next.svg"></image>
+    </view>
+  </navigator>
+  <view class="menu" bindtap="clearStorage">
+    <view class="title">
+      <image class="icon1" src="/images/icon/my/clear.png"></image>
+      <view class="name">清除缓存</view>
+    </view>
+    <image class="icon2" src="/images/icon/next.svg"></image>
+  </view>
+</view>
+
+
+<import src="/template/login/index.wxml" />
+<template is="apifmLogin" data="{{wxlogin: wxlogin}}" />

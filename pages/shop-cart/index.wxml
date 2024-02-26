@@ -1,0 +1,42 @@
+<view class="container">
+  <block wx:if="{{ !goods || goods.length == 0 }}">
+    <view class="title-box">
+      购物车空空如也～
+    </view>
+    <view class="to-index-btn" bindtap="toIndexPage">
+      去逛逛
+    </view>
+  </block>
+  <block wx:else>
+    <view class="goodsList">
+      <view class="a-gooods" wx:for="{{goods}}" wx:key="id">
+        <view wx:if="{{item.goDelete}}" class="pop-bg"></view>
+        <image wx:if="{{item.goDelete}}" class="pop-delete" src="/images/icon/del-white.svg" bindtap="deleteSel" data-index="{{index}}"></image>
+        <view class="a-goods-conts {{item.active? 'active':''}}" bindlongpress="longpress" bindtap="selectTap" data-index="{{index}}">
+          <view class="goods-info">
+            <view class="img-box">
+              <image src="{{item.pic}}" class="img" />
+            </view>
+            <view class="text-box">
+              <view class="goods-title">{{item.name}}</view>
+              <view class="goods-label">{{item.characteristic}}</view>
+              <view class="goods-price">¥ {{item.minPrice}}</view>
+              <view class="buy-num">
+                <view class="jian-btn" catchtap="jianBtnTap" data-index="{{index}}">-</view>
+                <input type="number" value="{{item.number}}" disabled/>
+                <view class="jia-btn {{item.number==curTouchGoodStore? 'disabled' : ''}}" catchtap="jiaBtnTap" data-index="{{index}}">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="jiesuan-box">
+      <view class="left-price">
+        <view class="label">合计：</view>
+        <view class="price">¥{{totalPrice}}</view>
+      </view>
+      <view class="to-pay-btn" bindtap="toPayOrder">去结算</view>
+    </view>
+  </block>
+</view>

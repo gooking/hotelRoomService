@@ -1,0 +1,34 @@
+<view class="form">
+  <form bindsubmit="bindSave" report-submit="true">
+    <view class="title">发票填写</view>
+    <view class="input">
+      <view>发票抬头</view>
+      <input name='comName' type="text" placeholder="填写发票抬头" placeholder-class="placeholder" />
+    </view>
+    <view class="input">
+      <view>税号</view>
+      <input name='tfn' type="text" placeholder="填写税号" placeholder-class="placeholder" />
+    </view>
+    <view class="input">
+      <view>发票内容</view>
+      <input name='consumption' type="text" placeholder="开票项目说明" placeholder-class="placeholder" />
+    </view>
+    <view class="input">
+      <view>发票金额</view>
+      <input name='amount' type="digit" placeholder="申请开票金额" placeholder-class="placeholder" />
+    </view>
+    <view class="input">
+      <view>地址与电话</view>
+      <input name='address' type="text" placeholder="发票栏目处填写的地址与电话" placeholder-class="placeholder" />
+    </view>
+    <view class="input">
+      <view>开户行与账号</view>
+      <input name='bank' type="text" placeholder="发票栏目处填写的开户行与账号" placeholder-class="placeholder" />
+    </view>
+    <view class="input">
+      <view>电子邮箱</view>
+      <input name='mail' type="text" placeholder="电子发票发送至该邮箱" placeholder-class="placeholder" />
+    </view>
+    <button class="save-btn" formType="submit">保存</button>
+  </form>
+</view>
