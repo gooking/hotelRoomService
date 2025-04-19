@@ -26,7 +26,11 @@ Page({
       content: '',
       success: function(res) {
         if (res.confirm) {
-          WXAPI.orderClose(wx.getStorageSync('token'), orderId).then(function(res) {
+          // https://www.yuque.com/apifm/nu0f75/wh4rrs
+          WXAPI.orderCloseV2({
+            token: wx.getStorageSync('token'),
+            orderId
+          }).then(function(res) {
             if (res.code == 0) {
               that.onShow();
             }
@@ -60,7 +64,8 @@ Page({
     const that = this;
     const orderId = e.currentTarget.dataset.id;
     let money = e.currentTarget.dataset.money;
-    const needScore = e.currentTarget.dataset.score;
+    const needScore = e.currentTarget.dataset.score
+    // https://www.yuque.com/apifm/nu0f75/wrqkcb
     WXAPI.userAmount(wx.getStorageSync('token')).then(function(res) {
       if (res.code == 0) {
         // 增加提示框
@@ -109,7 +114,11 @@ Page({
     const _this = this
     if (money <= 0) {
       // 直接使用余额支付
-      WXAPI.orderPay(wx.getStorageSync('token'), orderId).then(function (res) {
+      // https://www.yuque.com/apifm/nu0f75/lwt2vi
+      WXAPI.orderPayV2({
+        token: wx.getStorageSync('token'),
+        orderId
+      }).then(function (res) {
         _this.onShow();
       })
     } else {
@@ -153,6 +162,7 @@ Page({
     } else {
       postData.statusBatch = '3,4';
     }
+    // https://www.yuque.com/apifm/nu0f75/uwggsm
     WXAPI.orderList(postData).then(function(res) {
       if (res.code == 0) {
         res.data.orderList.forEach(ele => {
@@ -191,6 +201,7 @@ Page({
       content: '',
       success: function (res) {
         if (res.confirm) {
+          // https://www.yuque.com/apifm/nu0f75/vy8eai
           WXAPI.orderDelivery(wx.getStorageSync('token'), orderId).then(function (res) {
             if (res.code == 0) {
               that.onShow();
@@ -208,6 +219,7 @@ Page({
       content: '',
       success: function (res) {
         if (res.confirm) {
+          // https://www.yuque.com/apifm/nu0f75/eex4bb
           WXAPI.orderDelete(wx.getStorageSync('token'), orderId).then(function (res) {
             if (res.code == 0) {
               that.onShow();

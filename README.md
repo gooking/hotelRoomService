@@ -34,21 +34,32 @@
 
 [《如何查看我的小程序的 APPID，在哪里看我的小程序的 APPID？》](https://jingyan.baidu.com/article/642c9d340305e3644a46f795.html)
 
-[《设置小程序合法服务器域名》](https://www.yuque.com/apifm/doc/tvpou9)
+[《设置小程序合法服务器域名》](https://www.it120.cc/help/tvpou9.html)
 
-登录 [api工厂](https://admin.it120.cc) ，左侧菜单，微信设置，小程序设置，将上面的AppID和AppSecret填进去
+登录 [api工厂](https://admin.s2m.cc/) ，左侧菜单，微信设置，小程序设置，将上面的AppID和AppSecret填进去
 
 ## 把当前小程序测试数据克隆到你自己后台，方便测试
 
-登录 [api工厂](https://admin.it120.cc),左侧菜单 “工厂设置” --> “数据克隆” --> “将别人的数据克隆给我”
+登录 [api工厂](https://admin.s2m.cc/),左侧菜单 “工厂设置” --> “数据克隆” --> “将别人的数据克隆给我”
 
 对方商户ID填写 `19925`
 
 点击 “立即克隆”，克隆成功后，F5 刷新一下后台
 
+## 需要申请开通小程序的定位权限
+
+https://mp.weixin.qq.com/
+
+<img src="https://dcdn.it120.cc/2025/04/19/12ac6df2-46db-48f3-9878-17ef84a80134.png">
+
+申请的时候，上传的图片可以传这个，或者自己开发工具上截个图
+
+<img src="https://dcdn.it120.cc/2025/04/19/9289c78b-ce76-4a57-8ab5-fbfa14b835d9.png" width="250px">
+
+
 ## 配置微信支付
 
-登录 [api工厂](https://admin.it120.cc),左侧菜单，系统设置 -->  在线支付配置，填写您自己的微信支付的信息
+登录 [api工厂](https://admin.s2m.cc/),左侧菜单，系统设置 -->  在线支付配置，填写您自己的微信支付的信息
 
 # 其他优秀开源模板推荐
 - [天使童装](https://github.com/EastWorld/wechat-app-mall)   /  [码云镜像](https://gitee.com/javazj/wechat-app-mall)
@@ -64,6 +75,8 @@
 - [无人棋牌室](https://github.com/gooking/wurenqipai)  / [码云镜像](https://gitee.com/javazj/wurenqipai)
 - [酒店客房服务小程序](https://github.com/gooking/hotelRoomService)  / [码云镜像](https://gitee.com/javazj/hotelRoomService)
 - [朋友圈发圈素材小程序](https://github.com/gooking/moments)  / [码云镜像](https://gitee.com/javazj/moments)
+- [面包店风格小程序](https://github.com/gooking/bread)  / [码云镜像](https://gitee.com/javazj/bread)
+- [小红书企业微展](https://github.com/gooking/xhs-qiyeweizan)  / [码云镜像](https://gitee.com/javazj/xhs-qiyeweizan)
 
 # 联系作者
 

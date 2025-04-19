@@ -8,7 +8,8 @@ Page({
   },
 
   selectTap: function(e) {
-    var id = e.currentTarget.dataset.id;
+    var id = e.currentTarget.dataset.id
+    // https://www.yuque.com/apifm/nu0f75/cv6gh7
     WXAPI.updateAddress({
       token: wx.getStorageSync('token'),
       id: id,
@@ -38,6 +39,7 @@ Page({
       content: '确定要删除该收货地址吗？',
       success: function (res) {
         if (res.confirm) {
+          // https://www.yuque.com/apifm/nu0f75/gb0a2k
           WXAPI.deleteAddress(wx.getStorageSync('token'), id).then(function () {
             that.onShow()
           })
@@ -74,11 +76,14 @@ Page({
     })
   },
   initShippingAddress: function() {
-    var that = this;
-    WXAPI.queryAddress(wx.getStorageSync('token')).then(function(res) {
+    var that = this
+    // https://www.yuque.com/apifm/nu0f75/mmte1o
+    WXAPI.queryAddressV2({
+      token: wx.getStorageSync('token')
+    }).then(function(res) {
       if (res.code == 0) {
         that.setData({
-          addressList: res.data
+          addressList: res.data.result
         });
       } else if (res.code == 700) {
         that.setData({

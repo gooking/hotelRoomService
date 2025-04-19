@@ -1,4 +1,3 @@
-const app = getApp()
 const WXAPI = require('apifm-wxapi')
 const AUTH = require('../../utils/auth')
 
@@ -107,7 +106,7 @@ Page({
         return
       }
     }
-
+    // https://www.yuque.com/apifm/nu0f75/qx4w98
     WXAPI.orderCreate(postData).then(res => {
       if (res.code != 0) {
         wx.showModal({
@@ -150,6 +149,7 @@ Page({
     })
   },
   async initShippingAddress() {
+    // https://www.yuque.com/apifm/nu0f75/udrcag
     const res = await WXAPI.defaultAddress(wx.getStorageSync('token'))
     if (res.code == 0) {
       this.setData({
@@ -206,7 +206,8 @@ Page({
     })
   },
   getMyCoupons: function() {
-    var that = this;
+    var that = this
+    // https://www.yuque.com/apifm/nu0f75/te4079
     WXAPI.myCoupons({
       token: wx.getStorageSync('token'),
       status: 0

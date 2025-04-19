@@ -31,6 +31,7 @@ Page({
     const _this = this
     AUTH.checkHasLogined().then(isLogined => {
       if (isLogined) {
+        // https://www.yuque.com/apifm/nu0f75/ygzggg
         WXAPI.invoiceList({
           token: wx.getStorageSync('token')
         }).then(res => {

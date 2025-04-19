@@ -79,6 +79,7 @@ page {
   line-height: 28rpx;
 }
 .amount {
+  box-sizing: border-box;
   margin-top: 24rpx;
   width: 100vw;
   height: 80rpx;

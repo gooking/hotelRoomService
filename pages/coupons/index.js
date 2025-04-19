@@ -87,6 +87,7 @@ Page({
   },
   sysCoupons: function () { // 读取可领取券列表
     var _this = this;
+    // https://www.yuque.com/apifm/nu0f75/xmxf7y
     WXAPI.coupons().then(function (res) {
       if (res.code == 0) {
         _this.setData({
@@ -108,6 +109,7 @@ Page({
       })
       return
     }
+    // https://www.yuque.com/apifm/nu0f75/dhxcpu
     WXAPI.fetchCoupons({
       id: e.currentTarget.dataset.id,
       token: wx.getStorageSync('token')
@@ -160,6 +162,7 @@ Page({
   },
   getMyCoupons: function () {
     var _this = this;
+    // https://www.yuque.com/apifm/nu0f75/te4079
     WXAPI.myCoupons({
       token: wx.getStorageSync('token'),
       status: 0
@@ -177,6 +180,7 @@ Page({
   },
   invalidCoupons: function () {
     var _this = this;
+    // https://www.yuque.com/apifm/nu0f75/te4079
     WXAPI.myCoupons({
       token: wx.getStorageSync('token'),
       status: '1,2,3'

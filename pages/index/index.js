@@ -1,5 +1,4 @@
 const WXAPI = require('apifm-wxapi')
-const CONFIG = require('../../config.js')
 const TOOLS = require('../../utils/tools.js')
 
 //获取应用实例
@@ -44,6 +43,7 @@ Page({
     TOOLS.showTabBarBadge();
   },
   async shopSubdetail(){
+    // https://www.yuque.com/apifm/nu0f75/cu4cfi
     const res = await WXAPI.shopSubdetail(this.data.shopId)
     if (res.code == 0) {
       this.setData({
@@ -55,7 +55,8 @@ Page({
     }
   },
   async category(){
-    const res = await WXAPI.goodsCategory()
+    // https://www.yuque.com/apifm/nu0f75/racmle
+    const res = await WXAPI.goodsCategoryV2()
     if (res.code == 0){
       const categories = [
         {
@@ -89,11 +90,12 @@ Page({
     } else {
       postData.categoryId = categoryId
     }
-    const res = await WXAPI.goods(postData)
+    // https://www.yuque.com/apifm/nu0f75/wg5t98
+    const res = await WXAPI.goodsv2(postData)
     wx.hideLoading()
     if (res.code == 0) {
       this.setData({
-        goods: res.data
+        goods: res.data.result
       })
     } else {
       this.setData({

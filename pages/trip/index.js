@@ -60,6 +60,7 @@ Page({
       })
       return;
     }
+    // https://www.yuque.com/apifm/nu0f75/yndxym
     const res = await WXAPI.yuyueJoin({
       token: wx.getStorageSync('token'),
       yuyueId: this.data.yuyueId,

@@ -168,7 +168,7 @@ swiper-item image {
   font-size: 20rpx;
   color: #008000;
   box-sizing: border-box;
-  background: url("https://cdn.it120.cc/images/weappshop/kefu.png") no-repeat center 21rpx;
+  background: url("https://dcdn.it120.cc/2025/04/19/5339d352-0476-49f1-b1e1-dc1e1eb855c4.png") no-repeat center 21rpx;
   background-size: 55rpx auto;
 }
 .footer-box .shop-cart-btn {
@@ -182,7 +182,7 @@ swiper-item image {
   font-size: 20rpx;
   color: #acacb7;
   box-sizing: border-box;
-  background: url("https://cdn.it120.cc/images/weappshop/cart.png") no-repeat center 21rpx; 
+  background: url("https://dcdn.it120.cc/2025/04/19/5acefa43-6a3f-4522-aa59-715a1a16899d.png") no-repeat center 21rpx; 
   background-size: 44rpx auto;
 }
 .footer-box .shop-cart-btn .shop-num{

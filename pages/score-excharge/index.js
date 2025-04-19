@@ -96,6 +96,7 @@ Page({
       })
       return
     }
+    // https://www.yuque.com/apifm/nu0f75/pdg67o
     WXAPI.scoreExchange(wx.getStorageSync('token'), amount).then(function(res) {
       if (res.code == 700) {
         wx.showModal({

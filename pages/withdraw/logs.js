@@ -45,6 +45,7 @@ Page({
       })
       return
     }
+    // https://www.yuque.com/apifm/nu0f75/wrqkcb
     WXAPI.userAmount(token).then(function (res) {
       if (res.code == 700) {
         wx.showToast({
@@ -72,6 +73,7 @@ Page({
   },
   cashLogs() {
     const _this = this
+    // https://www.yuque.com/apifm/nu0f75/aw6qt6
     WXAPI.withDrawLogs({
       token: wx.getStorageSync('token'),
       page: 1,

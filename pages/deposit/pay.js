@@ -77,6 +77,7 @@ Page({
       })
       return
     }
+    // https://www.yuque.com/apifm/nu0f75/mpsdwi
     WXAPI.payDeposit({
       token: wx.getStorageSync('token'),
       amount: amount

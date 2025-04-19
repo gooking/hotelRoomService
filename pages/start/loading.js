@@ -21,6 +21,7 @@ Page({
     }  
   },
   async shopSubdetail(shopId){
+    // https://www.yuque.com/apifm/nu0f75/cu4cfi
     const res = await WXAPI.shopSubdetail(shopId)
     if (res.code == 0) {
       wx.setStorageSync('shop', res.data.info)

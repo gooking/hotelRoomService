@@ -15,6 +15,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/zanb9r
     WXAPI.noticeDetail(options.id).then(function (res) {
       if (res.code == 0) {
         that.setData({

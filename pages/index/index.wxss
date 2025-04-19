@@ -32,6 +32,7 @@
 }
 .category .item image {
   width: 50rpx;
+  height: 0;
   margin-top: 30rpx;
 }
 .category .item text {

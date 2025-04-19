@@ -29,6 +29,7 @@ Page({
    */
   onShow: function () {
     const _this = this
+    // https://www.yuque.com/apifm/nu0f75/zgf8pu
     WXAPI.userDetail(wx.getStorageSync('token')).then(res => {
       if (res.code === 0) {
         _this.setData({
@@ -90,6 +91,7 @@ Page({
       })
       return
     }
+    // https://www.yuque.com/apifm/nu0f75/ghnd96
     WXAPI.fxApply(wx.getStorageSync('token'), name, mobile).then(res => {
       if (res.code != 0) {
         wx.showToast({

@@ -3,7 +3,8 @@ const CONFIG = require('config.js')
 const AUTH = require('utils/auth')
 App({
   onLaunch: function() {
-    WXAPI.init(CONFIG.subDomain) // 从根目录的 config.js 文件中读取
+    WXAPI.init(CONFIG.subDomain)
+    WXAPI.setMerchantId(CONFIG.merchantId)
     const that = this;
     // 检测新版本
     const updateManager = wx.getUpdateManager()
@@ -57,10 +58,12 @@ App({
       }
     });
     //  获取接口和后台权限
+    // https://www.yuque.com/apifm/nu0f75/wb6u7d
     WXAPI.vipLevel().then(res => {
       that.globalData.vipLevel = res.data
     })
     //  获取商城名称
+    // https://www.yuque.com/apifm/nu0f75/dis5tl
     WXAPI.queryConfigBatch('TRIP_YUYUE_ID,RECHARGE_OPEN,recharge_amount_min,express_open').then(function(res) {
       if (res.code == 0) {
         res.data.forEach(config => {
@@ -72,6 +75,7 @@ App({
         
       }
     })
+    // https://www.yuque.com/apifm/nu0f75/zi13yk
     WXAPI.scoreRules({
       code: 'goodReputation'
     }).then(function(res) {
@@ -103,6 +107,7 @@ App({
             //   encryptedData: res.encryptedData,
             //   iv: res.iv
             // })
+            // https://www.yuque.com/apifm/nu0f75/uthem8
             WXAPI.shareGroupGetScore(
               e.query.inviter_id,
               res.encryptedData,

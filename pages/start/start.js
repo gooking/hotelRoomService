@@ -21,6 +21,7 @@ Page({
       });
     } else {
       // 展示启动页
+      // https://www.yuque.com/apifm/nu0f75/ms21ki
       WXAPI.banners({
         type: 'app'
       }).then(function (res) {

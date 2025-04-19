@@ -31,6 +31,7 @@ Page({
   onShow () {
     AUTH.checkHasLogined().then(isLogined => {
       if (isLogined) {
+        // https://www.yuque.com/apifm/nu0f75/ugh8nw
         WXAPI.payBillDiscounts().then(res => {
           if (res.code === 0) {
             this.setData({
@@ -103,6 +104,7 @@ Page({
       })
       return
     }
+    // https://www.yuque.com/apifm/nu0f75/wrqkcb
     const userMoney = await WXAPI.userAmount(wx.getStorageSync('token'))
     if (userMoney.code != 0) {
       wx.showToast({
@@ -151,7 +153,8 @@ Page({
     if (wxpayAmount > 0) {
       wxpay.wxpay('paybill', wxpayAmount, 0, "/pages/asset/index", { money: amount});
     } else {
-      WXAPI.payBill({
+      // https://www.yuque.com/apifm/nu0f75/aesrcd
+      WXAPI.payBillV2({
         token: wx.getStorageSync('token'),
         money: amount
       }).then(function (res) {

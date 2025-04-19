@@ -46,6 +46,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // https://www.yuque.com/apifm/nu0f75/be1cqu
     WXAPI.rechargeSendRules().then(res => {
       if (res.code === 0) {
         this.setData({
@@ -53,6 +54,7 @@ Page({
         });
       }
     })
+    // https://www.yuque.com/apifm/nu0f75/wrqkcb
     WXAPI.userAmount(wx.getStorageSync('token')).then(res => {
       if (res.code == 0) {
         this.setData({

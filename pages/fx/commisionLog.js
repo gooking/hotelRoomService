@@ -28,6 +28,7 @@ Page({
    */
   onShow: function () {
     const _this = this
+    // https://www.yuque.com/apifm/nu0f75/sgfzk2
     WXAPI.fxCommisionLog({
       token: wx.getStorageSync('token')
     }).then(res => {

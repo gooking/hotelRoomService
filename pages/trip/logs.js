@@ -16,6 +16,7 @@ Page({
   },
 
   onShow: function () {
+    // https://www.yuque.com/apifm/nu0f75/zbrb96
     WXAPI.yuyueMyJoinLogs({
       token: wx.getStorageSync('token'),
     }).then(res => {

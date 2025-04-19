@@ -1,6 +1,7 @@
 module.exports = {
-  version: "2.1.0",
-  note: '优化登录授权机制',
-  subDomain: "19925", // 根据教程 https://www.yuque.com/apifm/doc/qr6l4m 查看你自己的 subDomain
+  version: "25.4.19",
+  note: 'SDK升级',
+  merchantId: 19925, // 登陆后台，左侧工厂设置，商户信息，里面的商户ID复制填进来
+  subDomain: "19925", // 登陆后台，左侧工厂设置，商户信息，里面的专属域名复制填进来
   shareProfile: '百款精品商品，总有一款适合您', // 首页转发的时候话术
 }

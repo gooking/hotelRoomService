@@ -137,6 +137,7 @@ Page({
     extJsonStr['邮箱地址'] = mail
     extJsonStr['地址与电话'] = address
     extJsonStr['开户行与账号'] = bank
+    // https://www.yuque.com/apifm/nu0f75/nilvz0
     WXAPI.invoiceApply({
       token: wx.getStorageSync('token'),
       comName,

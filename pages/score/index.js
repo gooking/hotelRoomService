@@ -58,6 +58,7 @@ Page({
   doneShow: function () {
     const _this = this
     const token = wx.getStorageSync('token')
+    // https://www.yuque.com/apifm/nu0f75/wrqkcb
     WXAPI.userAmount(token).then(function (res) {
       if (res.code == 0) {
         _this.setData({
@@ -74,6 +75,7 @@ Page({
       }
     })
     // 读取积分明细
+    // https://www.yuque.com/apifm/nu0f75/ezi14x
     WXAPI.scoreLogs({
       token: token,
       page:1,

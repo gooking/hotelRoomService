@@ -25,7 +25,8 @@ Page({
   initData() {
     let that = this;
     wx.showNavigationBarLoading();
-    WXAPI.goodsCategory().then(function(res) {
+    // https://www.yuque.com/apifm/nu0f75/racmle
+    WXAPI.goodsCategoryV2().then(function(res) {
       var categories = [];
       var categoryName = '';
       var categoryId = '';
@@ -54,16 +55,20 @@ Page({
   },
   getGoodsList: function() {
     let that = this;
-    WXAPI.goods({
+    // https://www.yuque.com/apifm/nu0f75/wg5t98
+    WXAPI.goodsv2({
       categoryId: that.data.categorySelected.id,
       page: 1,
       pageSize: 100000
     }).then(function(res) {
       if (res.code == 404 || res.code == 700) {
+        that.setData({
+          currentGoods: null
+        })
         return
       }
       that.setData({
-        currentGoods: res.data
+        currentGoods: res.data.result
       });
       console.log(res.data);
       wx.hideNavigationBarLoading();

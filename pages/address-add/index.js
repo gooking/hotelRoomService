@@ -12,7 +12,8 @@ Page({
     aIndex: 0,//选择的区下标
   },
   async provinces(provinceId, cityId, districtId) {
-    const res = await WXAPI.province()
+    // https://www.yuque.com/apifm/nu0f75/anab2a
+    const res = await WXAPI.provinceV2()
     if (res.code == 0) {
       const provinces = [{
         id: 0,
@@ -49,7 +50,8 @@ Page({
       })
       return
     }
-    const res = await WXAPI.nextRegion(pid);
+    // https://www.yuque.com/apifm/nu0f75/kfukig
+    const res = await WXAPI.nextRegionV2(pid);
     if (res.code == 0) {
       const cities = [{
         id: 0,
@@ -84,7 +86,8 @@ Page({
       })
       return
     }
-    const res = await WXAPI.nextRegion(pid);
+    // https://www.yuque.com/apifm/nu0f75/kfukig
+    const res = await WXAPI.nextRegionV2(pid);
     if (res.code == 0) {
       const areas = [{
         id: 0,
@@ -174,8 +177,10 @@ Page({
     }
     if (this.data.id) {
       postData.id = this.data.id
+      // https://www.yuque.com/apifm/nu0f75/cv6gh7
       apiResult = await WXAPI.updateAddress(postData)
     } else {
+      // https://www.yuque.com/apifm/nu0f75/fcx2mf
       apiResult = await WXAPI.addAddress(postData)
     }
     wx.hideLoading();
@@ -190,7 +195,9 @@ Page({
     wx.navigateBack({})
   },
   async onLoad (e) {
-    if (e.id) { // 修改初始化数据库数据
+    if (e.id) { 
+      // 修改初始化数据库数据
+      // https://www.yuque.com/apifm/nu0f75/gszs9g
       const res = await WXAPI.addressDetail(wx.getStorageSync('token'), e.id)
       if (res.code == 0) {        
         this.setData({
@@ -219,6 +226,7 @@ Page({
       content: '确定要删除该收货地址吗？',
       success: function (res) {
         if (res.confirm) {
+          // https://www.yuque.com/apifm/nu0f75/gb0a2k
           WXAPI.deleteAddress(wx.getStorageSync('token'), id).then(function () {
             wx.navigateBack({})
           })

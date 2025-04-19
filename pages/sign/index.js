@@ -81,6 +81,7 @@ Page({
           })
           return
         }
+        // https://www.yuque.com/apifm/nu0f75/dqdgem
         WXAPI.scoreSign(wx.getStorageSync('token')).then(r => {
           wx.showToast({
             title: '签到成功',
@@ -98,7 +99,8 @@ Page({
           });
         })
       }
-    });
+    })
+    // https://www.yuque.com/apifm/nu0f75/scftkq
     WXAPI.scoreSignLogs({
       token: wx.getStorageSync('token')
     }).then(res => {

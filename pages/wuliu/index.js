@@ -7,7 +7,8 @@ Page({
     this.data.orderId = orderId;
   },
   onShow: function () {
-    var that = this;
+    var that = this
+    // https://www.yuque.com/apifm/nu0f75/oamel8
     WXAPI.orderDetail(wx.getStorageSync('token'), that.data.orderId).then(function (res) {
       if (res.code != 0) {
         wx.showModal({

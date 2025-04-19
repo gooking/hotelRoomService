@@ -16,6 +16,7 @@ Page({
     },
     onShow : function () {
       var that = this;
+      // https://www.yuque.com/apifm/nu0f75/oamel8
       WXAPI.orderDetail(wx.getStorageSync('token'), that.data.orderId).then(function (res) {
         if (res.code != 0) {
           wx.showModal({
@@ -55,6 +56,7 @@ Page({
           content: '',
           success: function(res) {
             if (res.confirm) {
+              // https://www.yuque.com/apifm/nu0f75/vy8eai
               WXAPI.orderDelivery(wx.getStorageSync('token'), orderId).then(function (res) {
                 if (res.code == 0) {
                   that.onShow();
@@ -102,6 +104,7 @@ Page({
         i++;
       }
       postJsonString.reputations = reputations;
+      // https://www.yuque.com/apifm/nu0f75/gebyya
       WXAPI.orderReputation({
         postJsonString: JSON.stringify(postJsonString)
       }).then(function (res) {

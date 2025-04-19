@@ -73,41 +73,9 @@ Page({
       url: '/pages/my/index'
     })
   },
-  getPhoneNumber: function(e) {
-    if (!e.detail.errMsg || e.detail.errMsg != "getPhoneNumber:ok") {
-      wx.showModal({
-        title: '提示',
-        content: e.detail.errMsg,
-        showCancel: false
-      })
-      return;
-    }
-    var that = this;
-    WXAPI.bindMobileWxa(wx.getStorageSync('token'), e.detail.encryptedData, e.detail.iv).then(function (res) {
-      if (res.code === 10002) {
-        this.setData({
-          wxlogin: false
-        })
-        return
-      }
-      if (res.code == 0) {
-        wx.showToast({
-          title: '绑定成功',
-          icon: 'success',
-          duration: 2000
-        })
-        that.getUserApiInfo();
-      } else {
-        wx.showModal({
-          title: '提示',
-          content: '绑定失败',
-          showCancel: false
-        })
-      }
-    })
-  },
   getUserApiInfo: function () {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/zgf8pu
     WXAPI.userDetail(wx.getStorageSync('token')).then(function (res) {
       if (res.code == 0) {
         let _data = {}
@@ -121,6 +89,7 @@ Page({
   },
   getUserAmount: function () {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/wrqkcb
     WXAPI.userAmount(wx.getStorageSync('token')).then(function (res) {
       if (res.code == 0) {
         that.setData({

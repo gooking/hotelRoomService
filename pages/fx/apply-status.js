@@ -50,7 +50,9 @@ Page({
   },
   async doneShow() {
     const _this = this
+    // https://www.yuque.com/apifm/nu0f75/zgf8pu
     const userDetail = await WXAPI.userDetail(wx.getStorageSync('token'))
+    // https://www.yuque.com/apifm/nu0f75/awzg4o
     WXAPI.fxApplyProgress(wx.getStorageSync('token')).then(res => {
       let applyStatus = userDetail.data.base.isSeller ? 2 : -1
       if (res.code == 2000) {
@@ -89,6 +91,7 @@ Page({
       title: '加载中',
       mask: true
     })
+    // https://www.yuque.com/apifm/nu0f75/ak40es
     WXAPI.wxaQrcode({
       scene: 'inviter_id=' + wx.getStorageSync('uid'),
       page: 'pages/index/index',

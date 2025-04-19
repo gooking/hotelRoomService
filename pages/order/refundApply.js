@@ -46,6 +46,7 @@ Page({
   },
   onShow(){
     const _this = this
+    // https://www.yuque.com/apifm/nu0f75/rgng3x
     WXAPI.refundApplyDetail(wx.getStorageSync('token'), _this.data.orderId).then(res => {
       if (res.code == 0) {
         _this.setData({
@@ -56,6 +57,7 @@ Page({
   },
   refundApplyCancel(){
     const _this = this
+    // https://www.yuque.com/apifm/nu0f75/bq6e6r
     WXAPI.refundApplyCancel(wx.getStorageSync('token'), _this.data.orderId).then(res => {
       if (res.code == 0) {
         wx.navigateTo({
@@ -112,7 +114,8 @@ Page({
   async uploadPics(){
     const _this = this;
     for (let i = 0; i< _this.data.files.length; i++) {
-      const res = await WXAPI.uploadFile(wx.getStorageSync('token'), _this.data.files[i])
+      // https://www.yuque.com/apifm/nu0f75/ygvqh6
+      const res = await WXAPI.uploadFileV2(wx.getStorageSync('token'), _this.data.files[i])
       if (res.code == 0) {
         _this.data.pics.push(res.data.url)
       }
@@ -137,6 +140,7 @@ Page({
     // 上传图片
     await _this.uploadPics()
     // _this.data.pics
+    // https://www.yuque.com/apifm/nu0f75/dg4ggt
     WXAPI.refundApply({
       token: wx.getStorageSync('token'),
       orderId: _this.data.orderId,

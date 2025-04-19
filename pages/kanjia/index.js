@@ -25,7 +25,10 @@ Page({
   },
   onShow: function() {
     var that = this
-    WXAPI.goodsDetail(that.data.id).then(function(res) {
+    // https://www.yuque.com/apifm/nu0f75/vuml8a
+    WXAPI.goodsDetailV2({
+      id: that.data.id
+    }).then(function(res) {
       if (res.code == 0) {
         that.data.goodsDetail = res.data;
         if (res.data.basicInfo.videoId) {
@@ -55,6 +58,7 @@ Page({
   },
   getVideoSrc: function(videoId) {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/nmynhc
     WXAPI.videoDetail(videoId).then(function(res) {
       if (res.code == 0) {
         that.setData({
@@ -65,6 +69,7 @@ Page({
   },
   getKanjiaInfo: function(kjid, joiner) {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/taxkl5
     WXAPI.kanjiaDetail(kjid, joiner).then(function(res) {
       if (res.code != 0) {
         wx.showModal({
@@ -81,6 +86,7 @@ Page({
   },
   getKanjiaInfoMyHelp: function(kjid, joiner) {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/goasgu
     WXAPI.kanjiaHelpDetail(wx.getStorageSync('token'), kjid, joiner).then(function(res) {
       if (res.code == 0) {
         that.setData({
@@ -92,6 +98,7 @@ Page({
   },
   helpKanjia: function() {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/xfw31k
     WXAPI.kanjiaHelp(wx.getStorageSync('token'), that.data.kjId, that.data.joiner, '').then(function(res) {
       if (res.code != 0) {
         wx.showModal({

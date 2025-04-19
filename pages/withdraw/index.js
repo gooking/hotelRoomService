@@ -27,6 +27,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    // https://www.yuque.com/apifm/nu0f75/wrqkcb
     WXAPI.userAmount(wx.getStorageSync('token')).then(res => {
       if (res.code == 0) {
         this.setData({
@@ -109,7 +110,11 @@ Page({
       })
       return
     }
-    WXAPI.withDrawApply(wx.getStorageSync('token'), amount).then(function(res) {
+    // https://www.yuque.com/apifm/nu0f75/qb6lg7
+    WXAPI.withDrawApplyV2({
+      token: wx.getStorageSync('token'),
+      money: amount
+    }).then(function(res) {
       if (res.code == 0) {
         wx.showModal({
           title: '成功',

@@ -83,7 +83,11 @@ Page({
   },
   async getGoodsDetailAndKanjieInfo(goodsId) {
     const that = this;
-    const goodsDetailRes = await WXAPI.goodsDetail(goodsId)
+    // https://www.yuque.com/apifm/nu0f75/vuml8a
+    const goodsDetailRes = await WXAPI.goodsDetailV2({
+      id: goodsId
+    })
+    // https://www.yuque.com/apifm/nu0f75/xs42ih
     const goodsKanjiaSetRes = await WXAPI.kanjiaSet(goodsId)
     if (goodsDetailRes.code == 0) {
       var selectSizeTemp = SelectSizePrefix;
@@ -119,7 +123,9 @@ Page({
         if (!that.data.kjJoinUid) {
           that.data.kjJoinUid = wx.getStorageSync('uid')
         }
+        // https://www.yuque.com/apifm/nu0f75/taxkl5
         const curKanjiaprogress = await WXAPI.kanjiaDetail(goodsKanjiaSetRes.data.id, that.data.kjJoinUid)
+        // https://www.yuque.com/apifm/nu0f75/goasgu
         const myHelpDetail = await WXAPI.kanjiaHelpDetail(wx.getStorageSync('token'), goodsKanjiaSetRes.data.id, that.data.kjJoinUid)
         if (curKanjiaprogress.code == 0) {
           _data.curKanjiaprogress = curKanjiaprogress.data
@@ -129,6 +135,7 @@ Page({
         }
       }
       if (goodsDetailRes.data.basicInfo.pingtuan) {
+        // https://www.yuque.com/apifm/nu0f75/trm30a
         const pingtuanSetRes = await WXAPI.pingtuanSet(goodsId)
         if (pingtuanSetRes.code == 0) {
           _data.pingtuanSet = pingtuanSetRes.data
@@ -243,7 +250,11 @@ Page({
     }
     // 计算当前价格
     if (canSubmit) {
-      WXAPI.goodsPrice(that.data.goodsDetail.basicInfo.id, propertyChildIds).then(function(res) {
+      // https://www.yuque.com/apifm/nu0f75/dxvqq2
+      WXAPI.goodsPriceV2({
+        goodsId: that.data.goodsDetail.basicInfo.id,
+        propertyChildIds: propertyChildIds
+      }).then(function(res) {
         let _price = res.data.price
         if (that.data.shopType == 'toPingtuan') {
           _price = res.data.pingtuanPrice
@@ -356,6 +367,7 @@ Page({
           url: "/pages/to-pay-order/index?orderType=buyNow&pingtuanOpenId=" + this.data.pingtuanopenid
         })
       } else {
+        // https://www.yuque.com/apifm/nu0f75/ugpz88
         WXAPI.pingtuanOpen(wx.getStorageSync('token'), that.data.goodsDetail.basicInfo.id).then(function(res) {
           if (res.code == 2000) {
             that.setData({
@@ -499,18 +511,20 @@ Page({
   },
   reputation: function(goodsId) {
     var that = this;
-    WXAPI.goodsReputation({
+    // https://www.yuque.com/apifm/nu0f75/wwv7gt
+    WXAPI.goodsReputationV2({
       goodsId: goodsId
     }).then(function(res) {
       if (res.code == 0) {
         that.setData({
-          reputation: res.data
+          reputation: res.data.result
         });
       }
     })
   },
   pingtuanList: function(goodsId) {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/qc38qt
     WXAPI.pingtuanList({
       goodsId: goodsId,
       status: 0
@@ -524,6 +538,7 @@ Page({
   },
   getVideoSrc: function(videoId) {
     var that = this;
+    // https://www.yuque.com/apifm/nu0f75/nmynhc
     WXAPI.videoDetail(videoId).then(function(res) {
       if (res.code == 0) {
         that.setData({
@@ -552,6 +567,7 @@ Page({
       title: '加载中',
       mask: true
     })
+    // https://www.yuque.com/apifm/nu0f75/okrgov
     WXAPI.kanjiaJoin(wx.getStorageSync('token'), _this.data.curGoodsKanjia.id).then(function(res) {
       wx.hideLoading()
       if (res.code == 0) {
@@ -589,6 +605,7 @@ Page({
   },
   helpKanjiaDone(){
     const _this = this;
+    // https://www.yuque.com/apifm/nu0f75/xfw31k
     WXAPI.kanjiaHelp(wx.getStorageSync('token'), _this.data.kjId, _this.data.kjJoinUid, '').then(function (res) {
       if (res.code != 0) {
         wx.showToast({
